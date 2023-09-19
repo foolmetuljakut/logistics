@@ -1,0 +1,49 @@
+{
+    "mainapp": {
+        "target": {
+            "name": "logistics-app",
+            "opts": "-fdiagnostics-color=always -g -Wall -Wformat -Werror -Wfatal-errors"
+        },
+        "unittestsymbol": "RATEMODEL",
+        "unittestlistmax": "1",
+        "files": [
+            {
+                "name": "ratemodel\/consumer.cpp",
+                "hash": "62c3799ca092cdfe13a739d471c3b367"
+            },
+            {
+                "name": "ratemodel\/consumer.hpp",
+                "hash": "fd536b8d6d1d0b5833834150a2749dea"
+            },
+            {
+                "name": "ratemodel\/link.cpp",
+                "hash": "9cc2a70560c5c705aaacb1be20626cb8"
+            },
+            {
+                "name": "ratemodel\/link.hpp",
+                "hash": "2cb591339060786affb95f94c188d84d"
+            },
+            {
+                "name": "ratemodel\/producer.cpp",
+                "hash": "7aa2bddfb29b9ab6cf19bd7080978997"
+            },
+            {
+                "name": "ratemodel\/producer.hpp",
+                "hash": "162d4830d82bfd8ec5772584172a8a56"
+            },
+            {
+                "name": "ratemodel\/item.cpp",
+                "hash": "09f24d3c96b3c38e16209775240b116b"
+            },
+            {
+                "name": "ratemodel\/item.hpp",
+                "hash": "e40062a3cd9e7285e9a96624227ecd53"
+            },
+            {
+                "name": "main.cpp",
+                "hash": "80e5de5041150e5246d8f2ee6dc87b3e"
+            }
+        ]
+    },
+    "projects": ""
+}
