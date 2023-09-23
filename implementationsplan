@@ -1,0 +1,9 @@
+task:
+    ratenmodell / ca-modelle für transport von gütern simulieren
+    züge / straßen / schiffe modellieren
+    züge:
+        gebunden an schienen,kontinuierlicher fortschritt + diskrete delivery
+    straßen:
+        interaktion mehrerer teilnehmer, kontinuierlicher fortschritt + diskrete delivery
+    schiffe:
+        freie bewegung, keine koppling, kontinuierlicher fortschritt + diskrete delivery
