@@ -1,0 +1,41 @@
+{
+    "mainapp": {
+        "target": {
+            "name": "logistics-app",
+            "opts": "-fdiagnostics-color=always -g -Wall -Wformat -Werror -Wfatal-errors"
+        },
+        "unittestsymbol": "LOGISTICS",
+        "unittestlistmax": "1",
+        "files": [
+            {
+                "name": "BasicLaneTraffic\/Vehicle.cpp",
+                "hash": "d41d8cd98f00b204e9800998ecf8427e"
+            },
+            {
+                "name": "BasicLaneTraffic\/Field.cpp",
+                "hash": "f980d513414eb0f3714b2f959dccb1ec"
+            },
+            {
+                "name": "BasicLaneTraffic\/Vehicle.hpp",
+                "hash": "b8badabf6357474fceffef95431cf311"
+            },
+            {
+                "name": "BasicLaneTraffic\/Field.hpp",
+                "hash": "2dadb8ead24746cdcb2c9ecd0178a39c"
+            },
+            {
+                "name": "BasicLaneTraffic\/Map.hpp",
+                "hash": "86db114d03eea8e1d4a282754ecd3baf"
+            },
+            {
+                "name": "BasicLaneTraffic\/Map.cpp",
+                "hash": "5e0e8cd38e95b03de80c1d3cc202f1b3"
+            },
+            {
+                "name": "main.cpp",
+                "hash": "bdd04f27b31e545ccaacedcde18b9202"
+            }
+        ]
+    },
+    "projects": ""
+}
