@@ -26,12 +26,14 @@ public:
 
 class Map
 {
-    std::vector<Field> map;
     std::random_device rd;
     std::mt19937 g;
+    std::vector<Field> map;
 public:
     Map() : g(rd()) {}
-    void createSingleLane();
+    void createSingleLane(size_t length);
+    void addVehicle(size_t newId);
+    bool isOccupied(size_t position);
 
     void update();
 };

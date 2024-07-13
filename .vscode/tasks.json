@@ -2,10 +2,16 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "ci-build",
-            "command": "../pmt/pmt",
+            "label": "ci-build-tests",
+            "command": "build.sh",
             "type": "shell",
-            "args": ["-fe", "logistics.json"]
+            "args": ["-s", ".", "-t", "logistics", "--tests-only"]
+        },
+        {
+            "label": "ci-build",
+            "command": "build.sh",
+            "type": "shell",
+            "args": ["-s", ".", "-t", "logistics"]
         }
     ]
 }

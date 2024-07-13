@@ -28,17 +28,18 @@ void Field::transfer(const size_t &target)
     if (vehicles.size() == 0)
         throw FieldException{"tried to transfer a non-existing vehicle on ", std::to_string(x)};
 
-    auto tf = std::find_if(neighbours.begin(), neighbours.end(), [target](auto &n)
-                           { return n->x == target; });
-    if (tf == neighbours.end())
+    auto targetField = std::find_if(neighbours.begin(), neighbours.end(), [target](auto &n) { 
+                            return n->x == target; 
+                        });
+    if (targetField == neighbours.end()) {
         throw FieldException{"neighbour ", std::to_string(target), " didn't exist as neighbour on ", std::to_string(x)};
-
-    if ((*tf)->isOccupied())
+    }
+    if ((*targetField)->isOccupied()) {
         throw FieldException{"tried to transfer onto an occupied field: ", std::to_string(x), " -> ", std::to_string(target)};
-
+    }
     // TODO replace with move
-    (*tf)->vehicles.push_back(vehicles.front());
-    vehicles.clear();
+    (*targetField)->vehicles.push_back(vehicles.front());
+    vehicles.erase(vehicles.begin());
 }
 
 bool operator==(const Field &lhs, const Field &rhs)
