@@ -50,3 +50,7 @@ void Map::update() {
         map[i].transfer(i+1);
     }
 }
+
+size_t Map::size() {
+    return this->map.size();
+}

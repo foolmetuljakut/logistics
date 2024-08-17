@@ -18,5 +18,6 @@ static const char *cfgKey_laneLength;
     void init();
 public:
     Application();
-
+    void update();
+    void print();
 };

@@ -36,6 +36,7 @@ public:
     bool isOccupied(size_t position);
 
     void update();
+    size_t size();
 };
 
 #endif // BasicLaneTrafficMap

@@ -19,4 +19,16 @@ void Application::loadConfig() {
 
 void Application::init() {
     map.createSingleLane(laneLength);
+    map.addVehicle(0);
+}
+
+void Application::update() {
+    map.update();
+}
+
+void Application::print() {
+    for(size_t i = 0; i < map.size(); i++) {
+        std::cout << (map.isOccupied(i) ? "▰" : "_");
+    }
+    std::cout << std::endl;
 }
