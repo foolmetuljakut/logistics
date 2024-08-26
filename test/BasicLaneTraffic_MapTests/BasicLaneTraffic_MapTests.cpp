@@ -3,7 +3,7 @@
 
 BasicLaneTraffic_MapTests::BasicLaneTraffic_MapTests() {
     map.createSingleLane(laneLength);
-    map.addVehicle(vehicleId);
+    map.addVehicle(vehicleId, startPos);
 }
 
 TEST_F(BasicLaneTraffic_MapTests, stochasticUpdateCheck) {
