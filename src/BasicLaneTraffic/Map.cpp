@@ -11,9 +11,23 @@ void Map::createSingleLane(size_t length) {
     }
 }
 
-void Map::addVehicle(size_t newId) {
-    if(!map.front().isOccupied()) {
-        map.front().addVehicle(Vehicle{newId});
+void Map::addVehicle(size_t newId, size_t position) {
+    if(position >= map.size()) {
+        throw MapException({"position", std::to_string(position), " > ", std::to_string(map.size()), " (map size)"});
+    }
+
+    auto fieldIt = std::find_if(map.begin(), map.end(), [position](const Field& f){ return f.getPosition() == position; });
+
+    bool fieldValid { fieldIt != map.end() };
+    if(!fieldValid) {
+        throw MapException({"no field with id ", std::to_string(position), " exists."});
+    }
+
+    bool fieldFree { !fieldIt->isOccupied() };
+    if(!fieldFree) {
+        throw MapException({"field with id ", std::to_string(position), " exists but is occupied."});
+    } else {
+        fieldIt->addVehicle(Vehicle{newId});
     }
 }
 

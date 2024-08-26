@@ -19,7 +19,9 @@ void Application::loadConfig() {
 
 void Application::init() {
     map.createSingleLane(laneLength);
-    map.addVehicle(0);
+    map.addVehicle(0, 0);
+    map.addVehicle(1, 1);
+    map.addVehicle(2, 2);
 }
 
 void Application::update() {

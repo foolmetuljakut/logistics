@@ -32,7 +32,7 @@ class Map
 public:
     Map() : g(rd()) {}
     void createSingleLane(size_t length);
-    void addVehicle(size_t newId);
+    void addVehicle(size_t newId, size_t position);
     bool isOccupied(size_t position);
 
     void update();
