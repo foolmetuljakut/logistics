@@ -36,7 +36,7 @@ public:
     Field() noexcept {}
     Field(const Field &f) : vehicles{f.vehicles}, x{f.x}, neighbours{f.neighbours}
     {
-        // std::cout << "Field: copying " << x << std::endl;
+        std::cout << "Field: copying " << x << std::endl;
     }
     Field(Field&& f) : vehicles{f.vehicles}, x{f.x}, neighbours{f.neighbours} {};
     Field(const size_t &position) noexcept : x{position} {}

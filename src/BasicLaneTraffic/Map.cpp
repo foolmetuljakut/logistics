@@ -1,8 +1,9 @@
 #include "Map.hpp"
 
 void Map::createSingleLane(size_t length) {
+    map = std::vector<Field>(length);
     for(size_t i = 0; i < length; i++) {
-        map.emplace_back(i);
+        map[i].setPosition(i);
     }
     // two loops to avoid problems with reallocation copies when distributing neighbourship relationships
     for(size_t i = 1; i < length; i++) {
