@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<!-- coloring styles -->
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .collapsible {
+            background-color: #777;
+            color: white;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+        }
+
+        .active,
+        .collapsible:hover {
+            background-color: #555;
+        }
+
+        .content {
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+            background-color: #f1f1f1;
+        }
+        .content {
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+            background-color: #f1f1f1;
+        }
+
+        div.item {
+            vertical-align: top;
+            display: inline-block;
+            text-align: center;
+            width: 680;
+        }
+
+        img {
+            width: 680;
+            height: 680;
+            background-color: grey;
+        }
+
+        .caption {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Logistics simulation</h2>
+
+
+    <button type="button" class="collapsible">BasicLaneTraffic / Single Lane Traffic </button>
+    <div class="content">
+        <p>
+            Implement method of linear motion along a given network of graph nodes forming a path. 
+            Choice of updates is given by
+            <ul>
+                <li>evaluation of possible moves (selection if space in front is free)</li>
+                <li>shuffling set of possible moves</li>
+                <li>execution of random sequence of possible moves</li>
+            </ul>
+        </p>
+    </div>
+
+    <button type="button" class="collapsible">Pot-based lane traffic on graph</button>
+    <div class="content">
+        <p>
+            <ul>
+                <li>
+                    space is discretized into pots:
+                    <ul>
+                        <li>id</li>
+                        <li>local coordinates</li>
+                        <li>id of occupying object (0 indicates empty space)</li>
+                        <li></li>
+                    </ul>
+                </li>
+                <li>
+                    objects have their separate structure
+                    <ul>
+                        <li>id</li>
+                        <li>field-id of head</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="item">
+                <img src="res/pot-graph/discr-update-seq.png" width="1080" height="680"/>
+                <span class="caption">discretization into fields and update procedure</span>
+            </div>  
+        </p>
+        <button type="button" class="collapsible">Open Section 1</button>
+        <div class="content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex
+                ea commodo consequat.</p>
+        </div>
+    </div>
+
+    <!-- expandable sections -->
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>
