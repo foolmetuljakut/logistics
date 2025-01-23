@@ -1,6 +1,2 @@
-logistics-app*
-build-app/
-build-test/
-coverage-report/
-*.gcno
-*.gcda
+build/
+.sconsign.dblite

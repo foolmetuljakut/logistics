@@ -3,15 +3,15 @@
     "tasks": [
         {
             "label": "ci-build-tests",
-            "command": "build.sh",
+            "command": "scons",
             "type": "shell",
-            "args": ["-s", ".", "-t", "logistics", "--tests-only"]
+            "args": ["--build=debug", "-j", "12", "--tests-only"]
         },
         {
             "label": "ci-build",
-            "command": "build.sh",
+            "command": "scons",
             "type": "shell",
-            "args": ["-s", ".", "-t", "logistics"]
+            "args": ["--build=debug", "-j", "12", "--no-tests"]
         }
     ]
 }
