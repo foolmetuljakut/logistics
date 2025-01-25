@@ -4,13 +4,14 @@ from os.path import exists
 # https://github.com/dblalock/scons-example/blob/master/test/sconscript
 
 # Set our required libraries
+include_paths 	= ["-I/opt/intel/oneapi/mkl/2025.0/include/"]
 libraries 		= []
-library_paths 	= ''
+library_paths 	= ["/opt/intel/oneapi/mkl/2025.0/lib"]
 cppDefines 		= {}
 debugFlags 		= ['-g']
 cppFlags 		= '-fdiagnostics-color=always -Wall -Wformat -Werror -Wfatal-errors'.split(' ')
 cxxFlags 		= []
-linkerFlags     = '-lspdlog -lconfig++'.split(' ')
+linkerFlags     = '-lspdlog -lconfig++ -lmkl_core -lmkl_sequential -lmkl_intel_lp64 -lm'.split(' ')
 
 AddOption('--build', dest='build', type='string', nargs=1, action='store', help="activate build configurations")
 AddOption('--tests-only', dest='tests_only', nargs=0, help="build test binary only")
@@ -25,6 +26,8 @@ common_env.Append(CPPDEFINES 	= cppDefines)
 common_env.Append(CPPFLAGS 		= cppFlags)
 common_env.Append(CXXFLAGS 		= cxxFlags)
 common_env.Append(LINKFLAGS		= linkerFlags)
+common_env.Append(CPPFLAGS 		= include_paths)
+common_env.Append(LINKFLAGS		= include_paths)
 
 # uncomment to force g++ for c code also--creates warnings but
 # avoids need for extern "C"
