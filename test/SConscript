@@ -7,7 +7,23 @@ env = env.Clone()
 linkerFlags     = '-lgtest -lgmock'.split()
 env.Append(LINKFLAGS		= linkerFlags)
 
-def glob_source_files(dirname="."):
+def list_files(startpath):
+    for root, dirs, files in os.walk(startpath):
+        level = root.replace(startpath, '').count(os.sep)
+        indent = ' ' * 4 * (level)
+        print('{}{}/'.format(indent, os.path.basename(root)))
+        subindent = ' ' * 4 * (level + 1)
+        for f in files:
+            print('{}{}'.format(subindent, f))
+
+list_files("test")
+
+def glob_source_files(dirname="."):	
+	globbered = []
+	for _, _, files in os.walk(dirname):
+		globbered += [File(file) for file in files if file.endswith("pp")] # cpp / hpp
+	print(f"adding from \"{dirname}\": {[file.name for file in globbered]}")
+
 	globStr=f"{dirname}/*.*pp"
 	globbed = Glob(globStr)
 	print(f"adding from \"{dirname}\": {[file.name for file in globbed]}")
